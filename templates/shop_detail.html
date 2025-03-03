@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เช่าชุดสวย | Moso Interior</title>
+    <meta name="description" content="บริการเช่าชุดสวยสำหรับทุกโอกาส พร้อมดีไซน์หลากหลายและคุณภาพเยี่ยม">
+    <meta name="keywords" content="เช่าชุด, ชุดออกงาน, ชุดราตรี, ชุดแต่งงาน, เช่าเสื้อผ้า">
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Moso Interior</div>
+            <ul>
+                <li><a href="#home">หน้าแรก</a></li>
+                <li><a href="#shop">ร้านค้า</a></li>
+                <li><a href="#reviews">รีวิว</a></li>
+                <li><a href="#contact">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>เช่าชุดสวยสำหรับทุกโอกาส</h1>
+                <p>เลือกชุดที่ใช่ สไตล์ที่ชอบ ในราคาที่คุณพอใจ</p>
+                <a href="#shop" class="btn">เลือกดูชุด</a>
+            </div>
+        </section>
+
+        <section id="shop" class="shop">
+            <h2>ชุดของเรา</h2>
+            <div class="filter">
+                <select id="category-filter">
+                    <option value="all">ทุกประเภท</option>
+                    <option value="ราตรี">ชุดราตรี</option>
+                    <option value="แต่งงาน">ชุดแต่งงาน</option>
+                    <option value="ออกงาน">ชุดออกงาน</option>
+                </select>
+            </div>
+            <div class="shop-items">
+                </div>
+        </section>
+
+        <section id="reviews" class="reviews">
+            <h2>รีวิวจากลูกค้า</h2>
+            <div class="review-items">
+                </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>ติดต่อเรา</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="ชื่อ">
+                <input type="email" placeholder="อีเมล">
+                <textarea placeholder="ข้อความ"></textarea>
+                <button type="submit">ส่งข้อความ</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Moso Interior. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script> </body>
+</html>

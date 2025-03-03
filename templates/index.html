@@ -1,0 +1,573 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="Tooplate">
+
+        <title>mindvibe -  HTML CSS Template</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/tooplate-moso-interior.css' %}" rel="stylesheet">
+        
+<!--
+
+Tooplate 2133 mindvibe
+
+https://www.tooplate.com/view/2133-moso-interior
+
+Bootstrap 5 HTML CSS Template
+
+-->
+        <!-- JAVASCRIPT FILES -->
+        <script src="path/to/your/js/jquery.min.js"></script>
+        <script src="path/to/your/js/bootstrap.min.js"></script>
+        <script src="path/to/your/js/click-scroll.js"></script>
+        <script src="path/to/your/js/jquery.backstretch.min.js"></script>
+        <script src="path/to/your/js/owl.carousel.min.js"></script>
+        <script src="path/to/your/js/custom.js"></script>
+
+
+        <body>
+            <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">Moso <span class="tooplate-red">Inter</span><span class="tooplate-green">ior</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button> 
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle click-scroll" href="#section_3" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="shop_listing">Shop Listing</a></li>
+                                    <li><a class="dropdown-item" href="shop_detail">Shop Detail</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_4">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                            </li>
+        
+                            <!-- If the user is logged in, show the username -->
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <span class="nav-link">Welcome, {{ user.first_name }}</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                            {% else %}
+                            <!-- If the user is not logged in, show the login link -->
+                            <li class="nav-item mx-auto">
+                                <a class="nav-link login-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </body>
+        
+
+        <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <span style="color: #0a0306;">Mind</span><span class="tooplate-red" style="color: #fb2d72;">Vibe</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle click-scroll" href="#section_3" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="shop_listing">Shop Listing</a></li>
+
+                                <li><a class="dropdown-item" href="shop_detail">Shop Detail</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_4">Reviews</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+
+            <section class="hero-section hero-slide d-flex justify-content-center align-items-center" id="section_1">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 col-12 text-center mx-auto">
+                            <div class="hero-section-text">
+                               
+                                <!-- เพิ่ม Bootstrap Icons -->
+                                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+                                <small class="section-small-title">Welcome to MindVibe <i class="hero-icon bi-bag"></i></small>
+
+                                <h1 class="hero-title mt-2 mb-4" style="color: #0a0306;">Second-hand clothes aren't just clothes, they're giving life a second chance.</h1>
+
+                                <form class="custom-form hero-form" action="#" method="get" role="form">
+                                    <div class="row">
+                                        <div class="col-lg-5 col-md-6 col-12">
+                                            <div class="input-group align-items-center">
+                                                <label for="product-name">Product</label>
+
+                                                <input type="text" name="product-name" id="product-name" class="form-control" placeholder="Shirts, Pants, Dresses..." required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-5 col-md-6 col-12">
+                                            <div class="input-group align-items-center">
+                                                <label for="last-name">Price</label>
+
+                                                <select name="price-range" class="form-select form-control" id="price-range" aria-label="Default select example">
+                                                    
+                                                        <option value="100" selected>฿100 to ฿300</option>
+                                                        <option value="300">฿300 to ฿500</option>
+                                                        <option value="5000">฿500 to ฿800</option>
+                                                        <option value="800">฿800 to ฿1,000</option>
+                                                        <option value="1000">฿1,000 UP</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-md-6 col-12">
+                                            <button type="submit" class="form-control" style="background-color: #00a711; color: white;" onmouseover="this.style.backgroundColor='#05010a'" onmouseout="this.style.backgroundColor='#00a711'">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <div class="hero-btn d-flex justify-content-center align-items-center">
+                                    <a class="bi-arrow-down hero-btn-link smoothscroll" href="#section_2" 
+                                    style="color: #00a711; font-size: 24px;" 
+                                    onmouseover="style='#05010a'" 
+                                    onmouseout="style='#00a711'"></a>
+                                </div> 
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="about-section section-padding" id="section_2">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-5 col-12">
+                            <small class="section-small-title">Our Story</small>
+
+                            <h2 class="mt-2 mb-4"><span class="text-muted">Introducing</span> mindvibe</h2>
+
+                            <h4 class="text-muted mb-3">Fast Fashion</h4>
+
+                            <p>Mass production of clothing in a short time and at a low cost to keep up with rapidly changing trends, but it negatively impacts the environment, overuses resources, and leads to unfair working conditions.</p>
+                        </div>
+
+                        <div class="col-lg-3 col-md-5 col-5 mx-lg-auto">
+                            <img src="{% static 'images/shop/Fast.jpg' %}" class="about-image about-image-small img-fluid" alt="">
+                        </div>
+
+                        <div class="col-lg-4 col-md-7 col-7">
+                            <img src="{% static 'images/shop/Fast2.jpg' %}" class="about-image img-fluid" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="shop-section section-padding" id="section_3">
+                <div class="container">
+                    <div class="row">
+            
+                        <div class="col-lg-12 col-12">
+                            <small class="section-small-title">Secondhand Clothing Shop</small>
+            
+                            <h2 class="mt-2 mb-4" style="color: #fb2d72;">Pre-loved Fashion</h2>
+                        </div>
+                        <!-- First Product -->
+                        <div class="col-lg-6 col-12">
+                            <div class="shop-thumb">
+                                <div class="shop-image-wrap">
+                                    <a href="shop-detail.html">
+                                        <img src="{% static 'images/shop/secondhand-clothing-1.jpg' %}" class="shop-image img-fluid" alt="Secondhand Shirt" style="width: 500px; height: 500px;">
+                                    </a>
+                                    
+            
+                                    <div class="shop-icons-wrap">
+                                        <div class="shop-icons d-flex flex-column align-items-center">
+                                            <a href="#" class="shop-icon bi-heart"></a>
+                                            <a href="#" class="shop-icon bi-bookmark"></a>
+                                        </div>
+            
+                                        <p class="shop-pricing mb-0 mt-3">
+                                            <span class="badge custom-badge">฿500</span>
+                                        </p>
+                                    </div>
+            
+                                    <div class="shop-btn-wrap">
+                                        <a href="shop_listing" class="shop-btn custom-btn btn d-flex align-items-center align-items-center">Learn more</a>
+                                    </div>
+                                </div>
+            
+                                <div class="shop-body">
+                                    <h4>Vintage Shirt</h4>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Second Product -->
+                        <div class="col-lg-6 col-12">
+                            <div class="shop-thumb">
+                                <div class="shop-image-wrap">
+                                    <a href="shop_listing">
+                                        <img src="{% static 'images/shop/secondhand-clothing-2.jpg' %}" class="shop-image" alt="Secondhand Jeans" style="width: 500px; height: 500px;">
+                                    </a>
+            
+                                    <div class="shop-icons-wrap">
+                                        <div class="shop-icons d-flex flex-column align-items-center">
+                                            <a href="#" class="shop-icon bi-heart"></a>
+                                            <a href="#" class="shop-icon bi-bookmark"></a>
+                                        </div>
+            
+                                        <p class="shop-pricing mb-0 mt-3">
+                                            <span class="badge custom-badge">฿200</span>
+                                        </p>
+                                    </div>
+            
+                                    <div class="shop-btn-wrap">
+                                        <a href="shop_listing" class="shop-btn custom-btn btn d-flex align-items-center align-items-center">Learn more</a>
+                                    </div>
+                                </div>
+            
+                                <div class="shop-body">
+                                    <h4>Used Jeans</h4>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+            </section>
+            
+            
+ <section class="reviews-section section-padding pb-0" id="section_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-12">
+                <small class="section-small-title">Our Happy Customers</small>
+                <h2 class="mt-2 mb-4">Customer Reviews</h2>
+
+                <div class="owl-carousel reviews-carousel">
+                    <div class="reviews-thumb">
+                        <div class="reviews-body">
+                            <h4>"Great quality clothes at an unbeatable price!"</h4>
+                        </div>
+
+                        <div class="reviews-bottom d-flex align-items-center">
+                            <img src="/Users/thawaphorn/Downloads/clothing_rental/static/images/avatar/customer3.jpg" class="avatar-image img-fluid" alt="">
+
+                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                <p class="mb-0">
+                                    <strong>Pine</strong>, <small>Customer</small>
+                                </p>
+
+                                <div class="reviews-icons">
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-half"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-thumb">
+                        <div class="reviews-body">
+                            <h4>"Easy rental process and found the perfect outfit!"</h4>
+                        </div>
+
+                        <div class="reviews-bottom d-flex align-items-center">
+                            <img src="images/avatar/customer2.jpg" class="avatar-image img-fluid" alt="">
+
+                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                <p class="mb-0">
+                                    <strong>Ton</strong>, <small>Designer</small>
+                                </p>
+
+                                <div class="reviews-icons">
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviews-thumb">
+                        <div class="reviews-body">
+                            <h4>"A great alternative to reduce fashion waste!"</h4>
+                        </div>
+
+                        <div class="reviews-bottom d-flex align-items-center">
+                            <img src="images/avatar/customer3.jpg" class="avatar-image img-fluid" alt="">
+
+                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                <p class="mb-0">
+                                    <strong>Mint</strong>, <small>Entrepreneur</small>
+                                </p>
+
+                                <div class="reviews-icons">
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                    <i class="bi-star-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12 col-12">
+                    <p class="d-flex justify-content-center align-items-center mt-lg-5">
+                        Share your review here: <a href="#" class="custom-btn btn ms-3"><i class="bi-facebook me-2"></i>Facebook</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section class="auth-section" id="section_5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#f9f9f9" fill-opacity="1" d="M0,96L40,117.3C80,139,160,181,240,186.7C320,192,400,160,480,149.3C560,139,640,149,720,176C800,203,880,245,960,250.7C1040,256,1120,224,1200,229.3C1280,235,1360,277,1400,298.7L1440,320L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
+                </svg>
+            
+                <div class="container">
+                    <div class="row justify-content-center align-items-start">
+                        <!-- Login / Signup -->
+                        <div class="col-lg-6 col-md-8 col-12">
+                            <div class="card shadow-lg border-0 p-4">
+                                <h2 class="text-center mb-4">Login / Sign Up</h2>
+            
+                                <!-- Tabs -->
+                                <ul class="nav nav-tabs justify-content-center" id="authTabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active cursor-pointer" id="login-tab" data-bs-toggle="tab" href="#login" role="tab">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link cursor-pointer" id="signup-tab" data-bs-toggle="tab" href="#signup" role="tab">Sign Up</a>
+                                    </li>
+                                </ul>
+            
+                                <!-- Tab Content -->
+                                <div class="tab-content mt-3" id="authTabsContent">
+                                    <!-- Login Form -->
+                                    <div class="tab-pane fade show active" id="login" role="tabpanel">
+                                        <form class="custom-form auth-form" action="{% url 'login' %}" method="post">
+                                            {% csrf_token %}
+                                            <div class="mb-3">
+                                                <label for="login-email" class="form-label">Email</label>
+                                                <input type="email" name="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="login-password" class="form-label">Password</label>
+                                                <input type="password" name="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <a href="{% url 'password_reset' %}" class="text-decoration-none">Forgot password?</a>
+                                            </div>
+                                            <button type="submit" class="btn w-100" style="background-color: #fb2d72; border-color: #fb2d72; color: white;">Login</button>
+                                        </form>
+                                    </div>
+            
+                                    <!-- Sign Up Form -->
+                                    <div class="tab-pane fade" id="signup" role="tabpanel">
+                                        <form class="custom-form auth-form" action="{% url 'signup' %}" method="post">
+                                            {% csrf_token %}
+                                            <div class="mb-3">
+                                                <label for="signup-first-name" class="form-label">First Name</label>
+                                                <input type="text" name="first-name" id="signup-first-name" class="form-control" placeholder="Jack" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="signup-last-name" class="form-label">Last Name</label>
+                                                <input type="text" name="last-name" id="signup-last-name" class="form-control" placeholder="Doe" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="signup-email" class="form-label">Email</label>
+                                                <input type="email" name="email" id="signup-email" class="form-control" placeholder="Jackdoe@gmail.com" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="signup-password" class="form-label">Password</label>
+                                                <input type="password" name="password" id="signup-password" class="form-control" placeholder="Enter your password" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> <!-- End Card -->
+                        </div>
+            
+                        <!-- Store & Contact Info -->
+                        <div class="col-lg-6 col-12">
+                            <div class="custom-block p-4 bg-success text-white">
+                                <h3 class="mb-2">Store</h3>
+                                <p class="mb-2">
+                                    <i class="contact-icon bi-geo-alt me-1"></i>
+                                    102 Utah Road, Berlin, Germany
+                                </p>
+            
+                                <h3 class="mt-3 mb-2">Contact Info</h3>
+                                <div class="d-flex flex-wrap">
+                                    <p class="mb-2 me-4">
+                                        <i class="contact-icon bi-telephone me-1"></i>
+                                        <a href="tel: 090-080-0760" class="text-white">090-080-0760</a>
+                                    </p>
+                                    <p>
+                                        <i class="contact-icon bi-envelope me-1"></i>
+                                        <a href="mailto:info@company.com" class="text-white">info@company.com</a>
+                                    </p>
+                                </div>
+            
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.750943746775!2d100.5732757!3d13.733522899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29effea93bb79%3A0x9669a95543f3045c!2z4LiLLiDguJ7guKPguYnguK3guKHguKHguLTguJXguKMg4LmB4LiC4Lin4LiH4LiE4Lil4Lit4LiH4LiV4Lix4LiZ4LmA4Lir4LiZ4Li34LitIOC5gOC4guC4leC4p-C4seC4kuC4meC4siDguIHguKPguLjguIfguYDguJfguJ7guKHguKvguLLguJnguITguKMgMTAxMTA!5e0!3m2!1sth!2sth!4v1740998488187!5m2!1sth!2sth" 
+                                    width="100%" 
+                                    height="220" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                 </iframe>
+                            
+
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#36363e" fill-opacity="1" d="M0,96L40,117.3C80,139,160,181,240,186.7C320,192,400,160,480,149.3C560,139,640,149,720,176C800,203,880,245,960,250.7C1040,256,1120,224,1200,229.3C1280,235,1360,277,1400,298.7L1440,320L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>            
+        </main>
+
+        <footer class="site-footer section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-5 col-12 mb-3">
+                        <h3><a href="index.html" class="custom-link mb-1">mindvibe</a></h3>
+
+                        <p class="text-white">Since 1986, We crafted interior products for better spaces</p>
+                        
+                        <p class="text-white"><a href="https://www.tooplate.com" target="_parent">Web Design: Tooplate</a></p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-12 ms-lg-auto mb-3">
+                        <h3 class="text-white mb-3">Store</h3>
+
+                        <p class="text-white mt-2">
+                            <i class="bi-geo-alt"></i>
+                            Berlin, Germany
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-12 mb-3">
+                        <h3 class="text-white mb-3">Contact Info</h3>
+
+                            <p class="text-white mb-1">
+                                <i class="bi-telephone me-1"></i>
+
+                                <a href="tel: 090-080-0760" class="text-white">
+                                    090-080-0760
+                                </a>
+                            </p>
+
+                            <p class="text-white mb-0">
+                                <i class="bi-envelope me-1"></i>
+
+                                <a href="mailto:info@company.com" class="text-white">
+                                    info@company.com
+                                </a>
+                            </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-7 copyright-text-wrap col-12 d-flex flex-wrap align-items-center mt-4 ms-auto">
+                        <p class="copyright-text mb-0 me-4">Copyright © mindvibe 2048</p>
+
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-twitter bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-facebook bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-instagram bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-pinterest bi-pinterest"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link social-icon-whatsapp bi-whatsapp"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
+    </body>
+</html>
