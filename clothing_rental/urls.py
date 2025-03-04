@@ -2,6 +2,8 @@ from django.urls import path, include
 from django.contrib import admin
 from . import views
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 app_name = 'clothing_rental'  # เพิ่ม namespace
@@ -15,7 +17,8 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),  # เพิ่ม URL สำหรับหน้า login
     path('signup/', views.user_signup, name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('', views.home, name='home'),  # หน้าแรกที่จะแสดงชื่อผู้ใช้
-
-
+    path('home/', views.home, name='home'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

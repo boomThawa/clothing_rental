@@ -32,12 +32,22 @@ LOGIN_REDIRECT_URL = '/'
 
 ALLOWED_HOSTS = []
 INSTALLED_APPS = [
+    # แอปพื้นฐานของ Django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles']
+    'django.contrib.staticfiles',
+
+    # แอปที่สร้างขึ้นเอง
+    'clothing_rental',  # ✅ แอปสำหรับระบบเช่าชุด
+    # Third-party apps (ถ้าใช้)
+    'crispy_forms',  # ✅ ช่วยให้จัดการฟอร์มใน Django ได้ง่ายขึ้น
+    'django_filters',  # ✅ ใช้สำหรับทำระบบกรองข้อมูล เช่น ค้นหาชุดตามราคา
+    'rest_framework',  # ✅ สำหรับ API (ถ้าอยากให้เว็บรองรับ API)
+]
+
 
 
 import os
@@ -51,14 +61,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # เส้นทางท�
 
 # Application definition
 
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -147,5 +149,12 @@ LOGIN_REDIRECT_URL = '/dashboard/'  # หรือ '/admin/' ถ้าคุณ�
 
 # กำหนดหน้า Login หากผู้ใช้ไม่ล็อกอิน
 LOGIN_URL = '/login/'  # หรือ '/signin/'
+
+# settings.py
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 
